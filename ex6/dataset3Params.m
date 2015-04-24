@@ -23,9 +23,25 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+% min_error = 1;
+% possible = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30];
+% for i = 1:length(possible)
+%     for j = 1:length(possible)
+%         tmp_C = possible(i);
+%         tmp_sigma = possible(j);
+%         model = svmTrain(X, y, tmp_C, @(x1, x2) gaussianKernel(x1, x2, tmp_sigma));
+%         predictions = svmPredict(model, Xval);
+%         error = mean(double(predictions ~= yval));
+%         if error < min_error
+%             min_error = error;
+%             C = tmp_C;
+%             sigma = tmp_sigma;
+%         end
+%     end;
+% end;
 
-
-
+C = 1;
+sigma = 0.1
 
 
 
