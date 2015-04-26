@@ -27,7 +27,10 @@ centroids = zeros(K, n);
 %
 
 
-
+for i = 1 : K
+    cluster = X(idx == i, :);
+    centroids(i, :) = sum(cluster)/size(cluster, 1);
+end
 
 
 
